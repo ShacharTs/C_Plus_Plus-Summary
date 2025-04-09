@@ -1,24 +1,25 @@
 # 📘 C++ and Makefile Beginner Summaries  
 **Author: Shachar Tsrafati**
 
-This repository includes easy-to-follow summaries of core C++ concepts and a complete beginner’s guide to using Makefiles.  
-Perfect for students and anyone starting to work with C++ and project automation.
+This repository includes two beginner-friendly guides:
+
+- ✅ A summary of core **C++** topics (weeks 1–10)
+- ✅ A clear and practical **Makefile** guide for C++ projects
+
+These guides are great for students or anyone starting to learn programming in C++ and working with automated builds using Makefiles.
 
 ---
 
 ## 📚 Contents
 
 - [🚀 C++ Summary](#-c-summary)
-- [🛠️ Makefile Guide](#️-makefile-guide)
-- [📂 Recommended Project Structure](#-recommended-project-structure)
-- [📥 Downloads](#-downloads)
-- [📜 License](#-license)
+- [🛠️ Makefile Guide](#-makefile-guide)
 
 ---
 
 ## 🚀 C++ Summary
 
-This summary includes the most important topics up to week 10 of an intro to C++ course.
+This guide covers key topics introduced in a C++ programming course up to Week 10.
 
 ### ✅ Topics Covered
 
@@ -31,7 +32,7 @@ This summary includes the most important topics up to week 10 of an intro to C++
 - Static Members & Methods  
 - Exception Handling (`try`, `catch`)  
 - Friend Functions & Operator Overloading  
-- Copy Constructors & Assignment Operators (Deep vs Shallow Copy)  
+- Copy Constructors & Assignment Operators  
 - `explicit`, Inheritance, and Overriding  
 - Function and Class Templates  
 
