@@ -12,19 +12,18 @@ These guides are great for students or anyone starting to learn programming in C
 
 ## 📚 Contents
 
-- [🚀 C++ Summary](#c-summary)
-  - [✅ Topics Covered](#topics-covered)
-  - [▶️ Compile Example](#compile-example)
-- [🛠️ Makefile Guide](#makefile-guide)
-  - [📘 What is a Makefile?](#what-is-a-makefile)
-  - [🔧 Basic Makefile Example](#basic-makefile-example)
-  - [📦 Using Shortcuts](#using-shortcuts)
-  - [📌 Common Symbols](#common-symbols)
-  - [🧹 Cleaning Up](#cleaning-up)
-  - [📛 Phony Targets](#phony-targets)
-  - [📚 Working with Libraries](#working-with-libraries)
-  - [📂 Example Project Structure](#example-project-structure)
-  - [📥 Full PDF](#full-pdf)
+- 🚀 C++ Summary
+  - ✅ Topics Covered
+  - ▶️ Compile Example
+- 🛠️ Makefile Guide
+  - 📘 What is a Makefile?
+  - 🔧 Basic Makefile Example
+  - 📦 Using Shortcuts
+  - 📌 Common Symbols
+  - 🧹 Cleaning Up
+  - 📛 Phony Targets
+  - 📚 Working with Libraries
+    [📂 Example Project Structure
 
 ---
 
