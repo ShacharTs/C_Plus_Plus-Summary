@@ -35,3 +35,6 @@ Compiling a basic C++ program:
 ```bash
 g++ -Wall -Werror -std=c++17 -o main main.cpp
 ./main
+```
+
+## 🛠️ Makefile Guide
