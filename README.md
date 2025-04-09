@@ -7,6 +7,7 @@ This repository includes two beginner-friendly guides:
 - ✅ A clear and practical **Makefile** guide for C++ projects
 
 These guides are great for students or anyone starting to learn programming in C++ and working with automated builds using Makefiles.
+**THERE MIGHT BE SOME MISTAKES KEEP IN MIND THIS IS NOT PERFECT**
 
 ---
 
