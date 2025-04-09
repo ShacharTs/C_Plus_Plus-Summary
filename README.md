@@ -12,14 +12,25 @@ These guides are great for students or anyone starting to learn programming in C
 
 ## 📚 Contents
 
-- [🚀 C++ Summary](#-c-summary)
-- [🛠️ Makefile Guide](#-makefile-guide)
+- [🚀 C++ Summary](#c-summary)
+  - [✅ Topics Covered](#topics-covered)
+  - [▶️ Compile Example](#compile-example)
+- [🛠️ Makefile Guide](#makefile-guide)
+  - [📘 What is a Makefile?](#what-is-a-makefile)
+  - [🔧 Basic Makefile Example](#basic-makefile-example)
+  - [📦 Using Shortcuts](#using-shortcuts)
+  - [📌 Common Symbols](#common-symbols)
+  - [🧹 Cleaning Up](#cleaning-up)
+  - [📛 Phony Targets](#phony-targets)
+  - [📚 Working with Libraries](#working-with-libraries)
+  - [📂 Example Project Structure](#example-project-structure)
+  - [📥 Full PDF](#full-pdf)
 
 ---
 
 ## 🚀 C++ Summary
 
-This guide covers key topics introduced in a C++ programming course up to Week 10.
+This guide covers key topics introduced in a C++ programming course up to Week 10.  
 I WILL UPDATE THIS
 
 ### ✅ Topics Covered
@@ -44,34 +55,18 @@ g++ -Wall -Werror -std=c++17 main.cpp -o main
 ./main
 ```
 
-# 🛠️ Makefile Beginner Guide  
-**Author: Shachar Tsrafati**
+---
+
+## 🛠️ Makefile Guide
 
 This guide introduces the **basics of Makefiles**, helping C and C++ beginners learn how to automate compilation, linking, and working with static and dynamic libraries.
 
----
+### 📘 What is a Makefile?
 
-## 📚 Contents
+A **Makefile** automates compiling C/C++ projects.  
+It helps manage multiple source files, dependencies, and build steps using simple syntax.
 
-- [📘 What is a Makefile?](#-what-is-a-makefile)
-- [🔧 Basic Makefile Example](#-basic-makefile-example)
-- [📦 Using Shortcuts](#-using-shortcuts)
-- [📌 Common Symbols](#-common-symbols)
-- [🧹 Cleaning Up](#-cleaning-up)
-- [📛 Phony Targets](#-phony-targets)
-- [📚 Working with Libraries](#-working-with-libraries)
-- [📂 Example Project Structure](#-example-project-structure)
-- [📥 Full PDF](#-full-pdf)
-
----
-
-## 📘 What is a Makefile?
-
-A **Makefile** automates compiling C/C++ projects. It helps manage multiple source files, dependencies, and build steps using simple syntax.
-
----
-
-## 🔧 Basic Makefile Example
+### 🔧 Basic Makefile Example
 
 ```makefile
 other.o: other.cpp
@@ -83,3 +78,89 @@ main.o: main.cpp
 output: other.o main.o
 	g++ other.o main.o -o output
 ```
+
+### 📦 Using Shortcuts
+
+```makefile
+CXX = g++
+CXXFLAGS = -g
+OUTPUT = output
+SRCS = main.cpp other.cpp
+OBJS = $(SRCS:.cpp=.o)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OUTPUT): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+```
+
+### 📌 Common Symbols
+
+| Symbol | Description                             |
+|--------|-----------------------------------------|
+| `$@`   | The target (e.g., `main`)               |
+| `$^`   | All dependencies (right side of `:`)    |
+| `$<`   | First dependency                        |
+| `$*`   | Target name without extension (rare)    |
+
+### 🧹 Cleaning Up
+
+```makefile
+clean:
+	rm -f *.o output *.so *.a
+```
+
+### 📛 Phony Targets
+
+```makefile
+.PHONY: clean all
+```
+
+Helps avoid conflicts when file names match target names.
+
+### 📚 Working with Libraries
+
+#### 🧱 Static Library
+
+```bash
+ar rcs libutils.a utils.o
+g++ main.cpp -L. -lutils -o main
+```
+
+#### 🔗 Shared Library
+
+```bash
+g++ -fPIC -shared utils.cpp -o libutils.so
+g++ main.cpp -L. -lutils -Wl,-rpath,. -o main
+LD_LIBRARY_PATH=. ./main
+```
+
+### 📂 Example Project Structure
+
+```
+project/
+├── main.cpp
+├── utils.cpp
+├── Makefile
+├── lib/
+│   └── libutils.so / libutils.a
+└── README.md
+```
+
+### 📥 Full PDF
+
+- [📄 Makefile Guide PDF](Makefile_guide.pdf)
+- [📘 C++ Summary PDF](C++_Summary.pdf)
+
+---
+
+## 🙋‍♂️ Author
+
+**Shachar Tsrafati**
+
+---
+
+## 📜 License
+
+Free to use for educational purposes.
