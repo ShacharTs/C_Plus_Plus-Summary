@@ -3,7 +3,7 @@
 
 This repository includes two beginner-friendly guides:
 
-- ✅ A summary of core **C++** topics (weeks 1–10)
+- ✅ A summary of core **C++** topics (weeks 1–10), based on materials studied at the **University of Ariel**
 - ✅ A clear and practical **Makefile** guide for C++ projects
 
 These guides are great for students or anyone starting to learn programming in C++ and working with automated builds using Makefiles.
