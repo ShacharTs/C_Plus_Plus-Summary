@@ -1,41 +1,42 @@
-# C++ and Makefile Beginner Summaries  
+# 📘 C++ and Makefile Beginner Summaries  
 **Author: Shachar Tsrafati**
 
-This repository provides easy-to-follow summaries and guides covering fundamental C++ concepts and a comprehensive beginner's guide to Makefiles. Perfect for students and beginners in programming courses!
+This repository includes easy-to-follow summaries of core C++ concepts and a complete beginner’s guide to using Makefiles.  
+Perfect for students and anyone starting to work with C++ and project automation.
 
 ---
 
-## 📚 Included Guides:
+## 📚 Contents
 
-- [**C++ Summary**](#-c-summary)
-- [**Makefile Guide**](#-makefile-guide)
+- [🚀 C++ Summary](#-c-summary)
+- [🛠️ Makefile Guide](#️-makefile-guide)
+- [📂 Recommended Project Structure](#-recommended-project-structure)
+- [📥 Downloads](#-downloads)
+- [📜 License](#-license)
 
 ---
 
 ## 🚀 C++ Summary
 
-**Covered Topics:**
+This summary includes the most important topics up to week 10 of an intro to C++ course.
 
-- Variables & Data Types
-- Namespaces, Typedef, Aliases
-- User-defined Functions
-- Structs & Classes
-- Constructors, Destructors
-- Pointers & Arrays
-- Static Members & Methods
-- Exception Handling (`try-catch`)
-- Friend Functions & Operator Overloading
-- Copy Constructors & Assignment Operators (Deep vs Shallow copy)
-- Explicit Keyword, Inheritance, and Overriding
-- Templates (Functions & Classes)
+### ✅ Topics Covered
 
-**Example Usage:**
+- Variables & Data Types  
+- Namespaces, Typedef, and Aliases  
+- User-defined Functions  
+- Structs & Classes  
+- Constructors & Destructors  
+- Pointers & Arrays  
+- Static Members & Methods  
+- Exception Handling (`try`, `catch`)  
+- Friend Functions & Operator Overloading  
+- Copy Constructors & Assignment Operators (Deep vs Shallow Copy)  
+- `explicit`, Inheritance, and Overriding  
+- Function and Class Templates  
 
-Compiling a basic C++ program:
+### ▶️ Compile Example
+
 ```bash
-g++ -Wall -Werror -std=c++17 -o main main.cpp
+g++ -Wall -Werror -std=c++17 main.cpp -o main
 ./main
-```
----
-
-## 🛠️ Makefile Guide
