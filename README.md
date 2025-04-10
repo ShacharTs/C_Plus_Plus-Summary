@@ -25,6 +25,7 @@ These guides are great for students or anyone starting to learn programming in C
   - 📛 Phony Targets
   - 📚 Working with Libraries
   - 📂 Example Project Structure
+  - ➕ And more 
 
 ---
 
