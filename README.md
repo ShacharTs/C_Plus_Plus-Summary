@@ -1,167 +1,172 @@
-# 📘 C++ and Makefile Beginner Summaries  
+# 📘 C++ & Makefile Beginner Summaries  
 **Author: Shachar Tsrafati**
 
-This repository includes two beginner-friendly guides:
-
-- ✅ A summary of core **C++** topics (weeks 1–10), based on materials studied at the **University of Ariel**
-- ✅ A clear and practical **Makefile** guide for C++ projects
-
-These guides are great for students or anyone starting to learn programming in C++ and working with automated builds using Makefiles.
-**THERE MIGHT BE SOME MISTAKES KEEP IN MIND THIS IS NOT PERFECT**
+A concise, student-authored reference covering both core C++ topics and Makefile-based build automation. Ideal for beginners and intermediate learners preparing for coursework or quick refreshers during development.
 
 ---
 
 ## 📚 Contents
 
-- 🚀 C++ Summary
-  - ✅ Topics Covered
-  - ▶️ Compile Example
-- 🛠️ Makefile Guide
-  - 📘 What is a Makefile?
-  - 🔧 Basic Makefile Example
-  - 📦 Using Shortcuts
-  - 📌 Common Symbols
-  - 🧹 Cleaning Up
-  - 📛 Phony Targets
-  - 📚 Working with Libraries
-  - 📂 Example Project Structure
-  - ➕ And more 
+1. [C++ Summary](#-c-summary)  
+   1. Topics Covered  
+   2. Compile Example  
+2. [Makefile Guide](#-makefile-guide)  
+   1. What is a Makefile?  
+   2. Basic Example  
+   3. Variables & Patterns  
+   4. Common Symbols  
+   5. Cleaning Up & Phony Targets  
+   6. Libraries  
+   7. Project Structure  
+3. [Usage](#-usage)  
+4. [Acknowledgements](#-acknowledgements)  
+5. [License](#-license)
 
 ---
 
 ## 🚀 C++ Summary
 
-This guide covers key topics introduced in a C++ programming course up to Week 10.  
-I WILL UPDATE THIS
+A quick reference of key C++ topics from syntax basics to advanced features. For full details, see [C++_Summary.pdf](C++_Summary.pdf).
 
-### ✅ Topics Covered
+### 1. Topics Covered
 
 - Variables & Data Types  
-- Namespaces, Typedef, and Aliases  
-- User-defined Functions  
+- Strings & `using namespace std`  
+- `const` Qualifier  
+- Namespaces  
+- Typedefs & Aliases  
+- Input/Output (`std::cin`, `std::cout`)  
+- Control Flow (`if`, `switch`, loops)  
+- Functions & Overloading  
+- Header Files & Includes  
 - Structs & Classes  
 - Constructors & Destructors  
-- Pointers & Arrays  
+- Arrays & Raw Pointers  
 - Static Members & Methods  
-- Exception Handling (`try`, `catch`)  
+- RAII & Smart Pointers (`unique_ptr`, `shared_ptr`, `weak_ptr`)  
+- Exception Handling (`try`/`catch`)  
+- Composition & Initialization  
 - Friend Functions & Operator Overloading  
-- Copy Constructors & Assignment Operators  
-- `explicit`, Inheritance, and Overriding  
-- Function and Class Templates  
+- Literals & Type Conversions  
+- Copy Control (Shallow vs. Deep)  
+- `explicit` Keyword  
+- Inheritance & Polymorphism  
+- Casting (`static_cast`, `dynamic_cast`, `reinterpret_cast`)  
+- Templates (Function, Class, Specialization, Metaprogramming)  
+- STL Containers & Algorithms (tuple, vector, set, map, iterators)
 
-### ▶️ Compile Example
+### 2. Compile Example
 
 ```bash
-g++ -Wall -Werror -std=c++17 main.cpp -o main
-./main
+g++ -std=c++17 -Wall -Wextra example.cpp -o example
+./example
 ```
 
 ---
 
 ## 🛠️ Makefile Guide
 
-This guide introduces the **basics of Makefiles**, helping C and C++ beginners learn how to automate compilation, linking, and working with static and dynamic libraries.
+An introduction to automating builds in C/C++ projects using Makefiles. For full details, see [Makefile_guide.pdf](Makefile_guide.pdf).
 
-### 📘 What is a Makefile?
+### 1. What is a Makefile?
 
-A **Makefile** automates compiling C/C++ projects.  
-It helps manage multiple source files, dependencies, and build steps using simple syntax.
+A plain-text file defining build targets, dependencies, and shell commands. Automates compilation, linking, and cleaning.
 
-### 🔧 Basic Makefile Example
+### 2. Basic Example
 
 ```makefile
-other.o: other.cpp
-	g++ -c other.cpp -o other.o
-
+# Build object files
 main.o: main.cpp
-	g++ -c main.cpp -o main.o
+	g++ -std=c++17 -c main.cpp -o main.o
 
-output: other.o main.o
-	g++ other.o main.o -o output
+util.o: util.cpp
+	g++ -std=c++17 -c util.cpp -o util.o
+
+# Link executable
+app: main.o util.o
+	g++ main.o util.o -o app
 ```
 
-### 📦 Using Shortcuts
+### 3. Variables & Patterns
 
 ```makefile
-CXX = g++
-CXXFLAGS = -g
-OUTPUT = output
-SRCS = main.cpp other.cpp
-OBJS = $(SRCS:.cpp=.o)
+CXX      = g++
+CXXFLAGS = -g -std=c++17
+SRCS     = main.cpp util.cpp
+OBJS     = $(SRCS:.cpp=.o)
+TARGET   = app
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OUTPUT): $(OBJS)
+$(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 ```
 
-### 📌 Common Symbols
+### 4. Common Symbols
 
-| Symbol | Description                             |
-|--------|-----------------------------------------|
-| `$@`   | The target (e.g., `main`)               |
-| `$^`   | All dependencies (right side of `:`)    |
-| `$<`   | First dependency                        |
-| `$*`   | Target name without extension (rare)    |
+| Symbol | Description                        |
+|--------|------------------------------------|
+| `$@`   | Target name                        |
+| `$^`   | All prerequisites                  |
+| `$<`   | First prerequisite                 |
 
-### 🧹 Cleaning Up
-
-```makefile
-clean:
-	rm -f *.o output *.so *.a
-```
-
-### 📛 Phony Targets
+### 5. Cleaning Up & Phony Targets
 
 ```makefile
 .PHONY: clean all
+
+all: $(TARGET)
+
+clean:
+	rm -f $(OBJS) $(TARGET)
 ```
 
-Helps avoid conflicts when file names match target names.
+### 6. Working with Libraries
 
-### 📚 Working with Libraries
+- **Static**: `ar rcs libmylib.a mylib.o` then `g++ main.o -L. -lmylib -o main`  
+- **Shared**: `g++ -fPIC -shared util.cpp -o libutil.so` then `g++ main.cpp -L. -lutil -Wl,-rpath=. -o main`
 
-#### 🧱 Static Library
-
-```bash
-ar rcs libutils.a utils.o
-g++ main.cpp -L. -lutils -o main
-```
-
-#### 🔗 Shared Library
-
-```bash
-g++ -fPIC -shared utils.cpp -o libutils.so
-g++ main.cpp -L. -lutils -Wl,-rpath,. -o main
-LD_LIBRARY_PATH=. ./main
-```
-
-### 📂 Example Project Structure
+### 7. Example Project Structure
 
 ```
 project/
-├── main.cpp
-├── utils.cpp
 ├── Makefile
-├── lib/
-│   └── libutils.so / libutils.a
+├── main.cpp
+├── util.cpp
+├── include/
+│   └── util.h
+├── lib/           # compiled libraries
+│   ├── libutil.a
+│   └── libutil.so
 └── README.md
 ```
 
-### 📥 Full PDF
+---
 
-- [📄 Makefile Guide PDF](Makefile_guide.pdf)
-- [📘 C++ Summary PDF](C++_Summary.pdf)
+## ⚙️ Usage
+
+1. **Compile C++ Samples:**  
+   `g++ -std=c++17 -Wall -Wextra example.cpp -o example`  
+2. **Build with Make:**  
+   `make` or `make app`  
+3. **Clean:**  
+   `make clean`
 
 ---
 
-## 🙋‍♂️ Author
+## 🙏 Acknowledgements
 
-**Shachar Tsrafati**
+Created by Shachar Tsrafati using:
+
+- GeeksforGeeks tutorials and articles  
+- Official C++ reference documentation  
+- Various online tutorials  
+- Coursework materials from Ariel University
 
 ---
 
 ## 📜 License
 
-Free to use for educational purposes.
+Free to use and adapt for educational purposes. Verify examples and report improvements.
+
