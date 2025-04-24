@@ -1,7 +1,7 @@
 # 📘 C++ & Makefile Beginner Summaries  
 **Author: Shachar Tsrafati**
 
-A concise, student-authored reference covering both core C++ topics and Makefile-based build automation. Ideal for beginners and intermediate learners preparing for coursework or quick refreshers during development.
+A concise, student-authored reference covering both core C++ topics and comprehensive Makefile-based build automation. Ideal for beginners and intermediate learners preparing for coursework or quick refreshers during development.
 
 ---
 
@@ -11,13 +11,17 @@ A concise, student-authored reference covering both core C++ topics and Makefile
    1. [Topics Covered](#topics-covered)  
    2. [Compile Example](#compile-example)  
 2. [Makefile Guide](#makefile-guide)  
-   1. [What is a Makefile?](#what-is-a-makefile)  
-   2. [Basic Example](#basic-example)  
-   3. [Variables & Patterns](#variables-and-patterns)  
-   4. [Common Symbols](#common-symbols)  
-   5. [Cleaning & Phony Targets](#cleaning-and-phony-targets)  
-   6. [Libraries](#libraries)  
-   7. [Project Structure](#project-structure)  
+   1. [Note](#note)  
+   2. [How to Create Makefile](#how-to-create-makefile)  
+   3. [Basic Makefile](#basic-makefile)  
+   4. [Shortcuts](#shortcuts)  
+   5. [Symbol Shortcuts (Wildcards)](#symbol-shortcuts)  
+   6. [Clean](#clean)  
+   7. [Phony Targets](#phony-targets)  
+   8. [Working with Libraries](#working-with-libraries)  
+   9. [Echo Messages](#echo-messages)  
+   10. [Recursive Make](#recursive-make)  
+   11. [Conditional Syntax (If-Else)](#conditional-syntax)  
 3. [Usage](#usage)  
 4. [Credits](#credits)  
 5. [License](#license)
@@ -38,7 +42,7 @@ A quick reference of key C++ topics from syntax basics to advanced features. For
 - Namespaces  
 - Typedefs & Aliases  
 - Input/Output (`std::cin`, `std::cout`)  
-- Control Flow (`if`, `switch`, loops)  
+- Control Flow (`if`/`else`, `switch`, loops)  
 - Functions & Overloading  
 - Header Files & Includes  
 - Structs & Classes  
@@ -70,83 +74,18 @@ g++ -std=c++17 -Wall -Wextra example.cpp -o example
 <a name="makefile-guide"></a>
 ## 🛠️ Makefile Guide
 
-An introduction to automating builds in C/C++ projects using Makefiles. For full details, see [Makefile_guide.pdf](Makefile_guide.pdf).
+For a full Makefile reference, see [Makefile_guide.pdf](Makefile_guide.pdf).
 
-<a name="what-is-a-makefile"></a>
-### 1. What is a Makefile?
-A plain-text file defining build targets, dependencies, and shell commands. Automates compilation, linking, and cleaning.
+**Topics Covered:**
+1. [What is a Makefile?](#what-is-a-makefile)
+2. [Basic Example](#basic-example)
+3. [Variables & Patterns](#variables-and-patterns)
+4. [Common Symbols](#common-symbols)
+5. [Cleaning & Phony Targets](#cleaning-and-phony-targets)
+6. [Working with Libraries](#libraries)
+7. [Example Project Structure](#project-structure)
 
-<a name="basic-example"></a>
-### 2. Basic Example
-```makefile
-# Build object files
-main.o: main.cpp
-	g++ -std=c++17 -c main.cpp -o main.o
-
-util.o: util.cpp
-	g++ -std=c++17 -c util.cpp -o util.o
-
-# Link executable
-app: main.o util.o
-	g++ main.o util.o -o app
-```
-
-<a name="variables-and-patterns"></a>
-### 3. Variables & Patterns
-```makefile
-CXX      = g++
-CXXFLAGS = -g -std=c++17
-SRCS     = main.cpp util.cpp
-OBJS     = $(SRCS:.cpp=.o)
-TARGET   = app
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
-```
-
-<a name="common-symbols"></a>
-### 4. Common Symbols
-| Symbol | Description   |
-|--------|---------------|
-| `$@`   | Target name   |
-| `$^`   | All prerequisites |
-| `$<`   | First prerequisite |
-
-<a name="cleaning-and-phony-targets"></a>
-### 5. Cleaning & Phony Targets
-```makefile
-.PHONY: clean all
-all: $(TARGET)
-clean:
-	rm -f $(OBJS) $(TARGET)
-```
-
-<a name="libraries"></a>
-### 6. Working with Libraries
-- **Static**: `ar rcs libmylib.a mylib.o` then `g++ main.o -L. -lmylib -o main`  
-- **Shared**: `g++ -fPIC -shared util.cpp -o libutil.so` then `g++ main.cpp -L. -lutil -Wl,-rpath=. -o main`
-
-<a name="project-structure"></a>
-### 7. Example Project Structure
-```
-project/
-├── Makefile
-├── main.cpp
-├── util.cpp
-├── include/
-│   └── util.h
-├── lib/           # compiled libraries
-│   ├── libutil.a
-│   └── libutil.so
-└── README.md
-```
-
----
-
-<a name="usage"></a>
+<a name="usage"></a></a>
 ## ⚙️ Usage
 
 1. **Compile C++ Samples:**  
