@@ -11,7 +11,7 @@ A concise, student-authored reference covering both core C++ topics and comprehe
    1. [Topics Covered](#topics-covered)  
    2. [Compile Example](#compile-example)  
 2. [Makefile Guide](#makefile-guide)  
-   1. [Topic Covers](#Topics-Covered)
+   1. [Topic Covers](#Topics-Covered:)
 3. [Usage](#usage)  
 4. [Credits](#credits)  
 5. [License](#license)
