@@ -8,8 +8,8 @@ A concise, student-authored reference covering both core C++ topics and comprehe
 ## 📚 Contents
 
 1. [C++ Summary](#c-summary)  
-   - Topics Covered  
-   - Compile Example  
+   - [Topics Covered](#Topics_Covered)
+   - [Compile Example](#Compile_Example)
 2. [Makefile Guide](#makefile-guide)  
 3. [Usage](#usage)  
 4. [Credits](#credits)  
