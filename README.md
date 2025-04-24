@@ -7,10 +7,10 @@ A concise, student-authored reference covering both core C++ topics and Makefile
 
 ## 📚 Contents
 
-1. [C++ Summary](#-c-summary)  
+1. [C++ Summary](#c-summary)  
    1. Topics Covered  
    2. Compile Example  
-2. [Makefile Guide](#-makefile-guide)  
+2. [Makefile Guide](#makefile-guide)  
    1. What is a Makefile?  
    2. Basic Example  
    3. Variables & Patterns  
@@ -18,9 +18,9 @@ A concise, student-authored reference covering both core C++ topics and Makefile
    5. Cleaning Up & Phony Targets  
    6. Libraries  
    7. Project Structure  
-3. [Usage](#-usage)  
-4. [Acknowledgements](#-acknowledgements)  
-5. [License](#-license)
+3. [Usage](#usage)  
+4. [Credits](#credits)  
+5. [License](#license)
 
 ---
 
@@ -64,6 +64,7 @@ g++ -std=c++17 -Wall -Wextra example.cpp -o example
 
 ---
 
+<a name="makefile-guide"></a>
 ## 🛠️ Makefile Guide
 
 An introduction to automating builds in C/C++ projects using Makefiles. For full details, see [Makefile_guide.pdf](Makefile_guide.pdf).
