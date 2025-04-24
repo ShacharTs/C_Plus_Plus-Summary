@@ -11,7 +11,7 @@ A concise, student-authored reference covering both core C++ topics and comprehe
    1. [Topics Covered](#topics-covered)  
    2. [Compile Example](#compile-example)  
 2. [Makefile Guide](#makefile-guide)  
-   1. [Topic Covers](#Topics_Covered:)
+   1. [Topic Covers](#MakeFile_Topics_Covered)
 3. [Usage](#usage)  
 4. [Credits](#credits)  
 5. [License](#license)
@@ -66,7 +66,7 @@ g++ -std=c++17 -Wall -Wextra example.cpp -o example
 
 For a full Makefile reference, see [Makefile_guide.pdf](Makefile_guide.pdf).
 
-**Topics Covered:**
+**MakeFile Topics Covered:**
 - **What is a Makefile?**
 - **Basic Example**
 - **Variables & Patterns**
