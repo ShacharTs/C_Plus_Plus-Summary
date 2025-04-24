@@ -11,17 +11,7 @@ A concise, student-authored reference covering both core C++ topics and comprehe
    1. [Topics Covered](#topics-covered)  
    2. [Compile Example](#compile-example)  
 2. [Makefile Guide](#makefile-guide)  
-   1. **Note**
-   2. **How to Create Makefile**  
-   3. **Basic Makefile]**
-   4. **Shortcuts**
-   5. **Symbol Shortcuts (Wildcards)**  
-   6. **Clean**
-   7. **Phony Targets**
-   8. **Working with Libraries** 
-   9. **Echo Messages**
-   10. **Recursive Make**
-   11. **Conditional Syntax (If-Else)**
+   1. [Topic Covers](#Topics-Covered)
 3. [Usage](#usage)  
 4. [Credits](#credits)  
 5. [License](#license)
