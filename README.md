@@ -8,10 +8,9 @@ A concise, student-authored reference covering both core C++ topics and comprehe
 ## 📚 Contents
 
 1. [C++ Summary](#c-summary)  
-   1. [Topics Covered](#topics-covered)  
-   2. [Compile Example](#compile-example)  
+   - Topics Covered  
+   - Compile Example  
 2. [Makefile Guide](#makefile-guide)  
-   1. [Topic Covers](#MakeFile_Topics_Covered)
 3. [Usage](#usage)  
 4. [Credits](#credits)  
 5. [License](#license)
@@ -23,9 +22,7 @@ A concise, student-authored reference covering both core C++ topics and comprehe
 
 A quick reference of key C++ topics from syntax basics to advanced features. For full details, see [C++_Summary.pdf](C++_Summary.pdf).
 
-<a name="topics-covered"></a>
-### 1. Topics Covered
-
+### Topics Covered
 - Variables & Data Types  
 - Strings & `using namespace std`  
 - `const` Qualifier  
@@ -51,9 +48,7 @@ A quick reference of key C++ topics from syntax basics to advanced features. For
 - Templates (Function, Class, Specialization, Metaprogramming)  
 - STL Containers & Algorithms (tuple, vector, set, map, iterators)
 
-<a name="compile-example"></a>
-### 2. Compile Example
-
+### Compile Example
 ```bash
 g++ -std=c++17 -Wall -Wextra example.cpp -o example
 ./example
@@ -66,16 +61,22 @@ g++ -std=c++17 -Wall -Wextra example.cpp -o example
 
 For a full Makefile reference, see [Makefile_guide.pdf](Makefile_guide.pdf).
 
-**MakeFile Topics Covered:**
-- **What is a Makefile?**
-- **Basic Example**
-- **Variables & Patterns**
-- **Common Symbols**
-- **Cleaning & Phony Targets**
-- **Working with Libraries**
-- **Example Project Structure**
+**Topics Covered:**
+- **Note**  
+- **How to Create Makefile**  
+- **Basic Makefile**  
+- **Shortcuts**  
+- **Symbol Shortcuts (Wildcards)**  
+- **Clean**  
+- **Phony Targets**  
+- **Working with Libraries**  
+- **Echo Messages**  
+- **Recursive Make**  
+- **Conditional Syntax (If-Else)**
 
-<a name="usage"></a></a>
+---
+
+<a name="usage"></a>
 ## ⚙️ Usage
 
 1. **Compile C++ Samples:**  
