@@ -77,13 +77,13 @@ g++ -std=c++17 -Wall -Wextra example.cpp -o example
 For a full Makefile reference, see [Makefile_guide.pdf](Makefile_guide.pdf).
 
 **Topics Covered:**
-1. [What is a Makefile?](#what-is-a-makefile)
-2. [Basic Example](#basic-example)
-3. [Variables & Patterns](#variables-and-patterns)
-4. [Common Symbols](#common-symbols)
-5. [Cleaning & Phony Targets](#cleaning-and-phony-targets)
-6. [Working with Libraries](#libraries)
-7. [Example Project Structure](#project-structure)
+- **What is a Makefile?**
+- **Basic Example**
+- **Variables & Patterns**
+- **Common Symbols**
+- **Cleaning & Phony Targets**
+- **Working with Libraries**
+- **Example Project Structure**
 
 <a name="usage"></a></a>
 ## ⚙️ Usage
