@@ -10,6 +10,7 @@ A concise, student-authored reference covering both core C++ topics and comprehe
 1. [C++ Summary](#c-summary)  
    - [Topics Covered](#topics-covered)  
    - [Compile Example](#compile-example)  
+   - [Goals](#goals)
 2. [Makefile Guide](#makefile-guide)  
 3. [Usage](#usage)  
 4. [Credits](#credits)  
@@ -53,6 +54,19 @@ A quick reference of key C++ topics from syntax basics to advanced features. For
 g++ -std=c++17 -Wall -Wextra example.cpp -o example
 ./example
 ```
+
+<a name="goals"></a>
+## 🎯 Next Goals to Add to the Summary (not promising)
+- Next goals to add to the summary (not promising):
+  - **Lambda expressions** for concise, inline functions
+  - **Move semantics & rvalue references** for efficient resource transfers
+  - **`constexpr` & `noexcept`** to enable compile-time evaluation and improved safety
+  - **Type inference (`auto`, `decltype`)** to reduce code verbosity
+  - **`nullptr` and scoped enums (`enum class`)** for safer code
+  - **Standard library utilities** introduced in C++17/20: `std::optional`, `std::variant`, `std::any`, `std::filesystem`
+  - **Structured bindings** and **range-based algorithms** with lambdas
+  - **Concurrency support**: `<thread>`, `<mutex>`, `<future>`, and atomics
+  - **Enhanced algorithms** from `<algorithm>` and ranges (C++20)
 
 ---
 
@@ -103,4 +117,6 @@ Created by Shachar Tsrafati using:
 ## 📜 License
 
 Free to use and adapt for educational purposes. Verify examples and report improvements.
+
+---
 
