@@ -10,7 +10,7 @@ A concise, student-authored reference covering both core C++ topics and comprehe
 1. [C++ Summary](#c-summary)  
    - [Topics Covered](#topics-covered)  
    - [Compile Example](#compile-example)  
-   - [Goals](#goals)
+   - [Next Goals to Add to the Summary (not promising)](#goals)
 2. [Makefile Guide](#makefile-guide)  
 3. [Usage](#usage)  
 4. [Credits](#credits)  
